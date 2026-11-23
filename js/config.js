@@ -1,7 +1,7 @@
 const $ = (id) => document.getElementById(id),
   rub = (n) =>
     new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 }).format(n) +
-    " ₽",
+    "\u00A0₽",
   num = (n) =>
     new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 1 }).format(n),
   percent = (n) => num(n) + "%",
