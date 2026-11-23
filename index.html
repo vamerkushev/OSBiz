@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b0d0c" />
+    <title>ОСБИЗ — бизнес-аналитика</title>
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script>
+      document.documentElement.setAttribute(
+        "data-theme",
+        localStorage.getItem("osbiz_theme") || "dark",
+      );
+    </script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div class="top-left">
+          <button
+            class="icon-btn"
+            id="sidebarToggle"
+            aria-label="Скрыть или показать панель"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4.5" width="18" height="15" rx="3" />
+              <path d="M9.5 4.5v15" />
+            </svg>
+          </button>
+          <div class="brand">
+            <img id="brandLogo" src="assets/logo.png" alt="ОСБИЗ" />
+            <div><small>Business intelligence</small></div>
+          </div>
+        </div>
+        <div class="topright">
+          <div class="market-status"><i></i>Все системы работают</div>
+          <button
+            class="icon-btn"
+            id="themeToggle"
+            aria-label="Переключить тему"
+          >
+            <svg
+              class="ico-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <circle cx="12" cy="12" r="4.2" />
+              <path
+                d="M12 2.6v2.3M12 19.1v2.3M4.7 4.7l1.6 1.6M17.7 17.7l1.6 1.6M2.6 12h2.3M19.1 12h2.3M4.7 19.3l1.6-1.6M17.7 6.3l1.6-1.6"
+              /></svg
+            ><svg
+              class="ico-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.6 13.8A8.4 8.4 0 1 1 10.2 3.4a7 7 0 0 0 10.4 10.4Z"
+              />
+            </svg></button
+          ><button class="avatar" id="topAvatar" aria-label="Профиль">
+            <svg
+              viewBox="0 0 96 96"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="48" cy="48" r="48" fill="#8f9593" />
+              <circle cx="48" cy="37" r="14.5" fill="#ffffff" />
+              <path
+                d="M48 55c-16.5 0-27.5 10.5-29.5 24.5C27.2 88.6 37.2 94 48 94s20.8-5.4 29.5-14.5C75.5 65.5 64.5 55 48 55Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <div class="shell">
+        <aside class="sidebar">
+          <div class="navtitle">Рабочее пространство</div>
+          <nav class="nav">
+            <button class="active" data-page="dashboard">
+              <span class="ico">▦</span>Обзор рынка бизнеса
+            </button>
+            <button data-page="reports">
+              <span class="ico">▤</span>Отчётность
+            </button>
+            <button data-page="profile">
+              <span class="ico">◉</span>Личный кабинет
+            </button>
+          </nav>
+          <div class="branding-footer">
+            <b>ОСБИЗ ANALYTICS</b
+            ><span
+              >Персональный терминал бизнес-аналитики.<br />Демо-версия
+              продукта</span
+            >
+          </div>
+        </aside>
+        <main class="main">
+          <section class="page active" id="page-dashboard">
+            <div class="heading">
+              <div>
+                <div class="kicker">Портфель бизнеса / аналитика</div>
+                <h1 id="dashTitle">Моя компания</h1>
+                <div class="sub" id="dashSub">
+                  Сводные показатели и финансовая динамика
+                </div>
+              </div>
+              <div class="actions">
+                <div class="business-switch" id="businessSwitch"></div>
+                <select id="periodSelect" aria-label="Период">
+                  <option value="all">Весь период</option>
+                  <option value="12">12 месяцев</option>
+                  <option value="6">6 месяцев</option>
+                </select>
+              </div>
+            </div>
+            <div class="metrics" id="mainMetrics"></div>
+            <div class="two">
+              <div class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Финансовая динамика</h2>
+                    <div class="sub">Выручка и чистая прибыль · ₽</div>
+                  </div>
+                  <select id="chartMetric" style="width: auto">
+                    <option value="revenue">Выручка / прибыль</option>
+                    <option value="margin">Рентабельность</option>
+                    <option value="clients">Клиентская база</option>
+                  </select>
+                </div>
+                <svg
+                  class="chart"
+                  id="mainChart"
+                  viewBox="0 0 760 250"
+                  preserveAspectRatio="none"
+                ></svg>
+                <div class="legend">
+                  <span
+                    ><i style="background: var(--green)"></i>Выручка /
+                    рост</span
+                  ><span><i style="background: var(--muted2)"></i>Прибыль</span
+                  ><span><i style="background: var(--red)"></i>Снижение</span>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Ключевые индикаторы</h2>
+                    <div class="sub">Последний доступный отчёт</div>
+                  </div>
+                  <span class="sub" id="lastPeriod">—</span>
+                </div>
+                <div class="summary" id="quickStats"></div>
+                <div class="insight" id="insight">
+                  Добавьте отчётность, чтобы получить аналитические выводы.
+                </div>
+              </div>
+            </div>
+            <div class="bottom-grid">
+              <div class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Показатели бизнеса</h2>
+                    <div class="sub">Только метрики с доступными данными</div>
+                  </div>
+                  <button class="btn small" data-page="reports">
+                    Все отчёты
+                  </button>
+                </div>
+                <div class="data-list" id="availableMetrics"></div>
+              </div>
+              <div class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Последние отчёты</h2>
+                    <div class="sub">История по выбранному бизнесу</div>
+                  </div>
+                  <button class="btn add" data-page="reports">Добавить</button>
+                </div>
+                <div id="recentReports"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-reports">
+            <div class="heading">
+              <div>
+                <div class="kicker">Финансовая отчётность</div>
+                <h1>Отчёты и показатели</h1>
+                <div class="sub" id="reportsBusinessName">
+                  Месячная аналитика выбранного бизнеса
+                </div>
+              </div>
+              <div class="actions">
+                <select
+                  id="reportMonthSelect"
+                  style="width: auto; min-width: 150px"
+                ></select
+                ><button class="btn primary" id="newReportBtn">
+                  ＋ Новый отчёт
+                </button>
+              </div>
+            </div>
+            <div class="panel" style="margin-bottom: 13px">
+              <div class="panel-head">
+                <div>
+                  <h2 id="reportHeading">Данные за период</h2>
+                  <div class="sub">
+                    Незаполненные и недоступные метрики не отображаются
+                  </div>
+                </div>
+                <button class="btn small" id="editReportBtn">
+                  Изменить данные
+                </button>
+              </div>
+              <div class="data-list" id="reportMetrics">
+                <div class="empty">Нет данных для отображения</div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>История отчётности</h2>
+                  <div class="sub">Все периоды выбранного бизнеса</div>
+                </div>
+              </div>
+              <div id="reportTable"></div>
+            </div>
+          </section>
+
+          <section class="page" id="page-profile">
+            <div class="heading">
+              <div>
+                <div class="kicker">Настройки аккаунта</div>
+                <h1>Личный кабинет</h1>
+                <div class="sub">Управление профилем и бизнесами</div>
+              </div>
+            </div>
+            <div class="profile-layout">
+              <div class="panel profile-card">
+                <div class="profile-avatar" id="profileAvatar">
+                  <svg
+                    viewBox="0 0 96 96"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <circle cx="48" cy="48" r="48" fill="#8f9593" />
+                    <circle cx="48" cy="37" r="14.5" fill="#ffffff" />
+                    <path
+                      d="M48 55c-16.5 0-27.5 10.5-29.5 24.5C27.2 88.6 37.2 94 48 94s20.8-5.4 29.5-14.5C75.5 65.5 64.5 55 48 55Z"
+                      fill="#ffffff"
+                    />
+                  </svg>
+                </div>
+                <h2 id="profileDisplayName">Имя не указано</h2>
+                <div class="sub" id="profileDisplayEmail">Email не указан</div>
+                <div
+                  style="height: 1px; background: var(--line); margin: 18px 0"
+                ></div>
+                <h3>Данные профиля</h3>
+                <div class="field">
+                  <label>Имя и фамилия</label
+                  ><input id="userName" placeholder="Имя и фамилия" />
+                </div>
+                <div class="field">
+                  <label>Email</label
+                  ><input
+                    id="userEmail"
+                    type="email"
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div class="field">
+                  <label>Роль / должность</label
+                  ><input
+                    id="userRole"
+                    placeholder="Например, предприниматель"
+                  />
+                </div>
+                <button class="btn primary" id="saveUser">
+                  Сохранить профиль
+                </button>
+              </div>
+              <div class="panel profile-card">
+                <h2>Мои бизнесы</h2>
+                <div class="sub">
+                  Отдельная отчётность и аналитика для каждого проекта
+                </div>
+                <button class="btn primary block" id="createBusinessBtn">
+                  Создать
+                </button>
+                <div id="businessCards"></div>
+                <div class="note">
+                  Создание новых бизнесов доступно только в личном кабинете. На
+                  главном экране можно переключаться между уже созданными
+                  бизнесами.
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <nav class="mobilebar">
+      <button class="active" data-page="dashboard"><span>▦</span>Обзор</button
+      ><button data-page="reports"><span>▤</span>Отчёты</button
+      ><button data-page="profile"><span>◉</span>Кабинет</button>
+    </nav>
+
+    <div class="modal-bg" id="businessModal">
+      <div class="modal">
+        <h2>Создать бизнес</h2>
+        <p>
+          Добавьте новое направление. Для него будет создан отдельный набор
+          месячных отчётов.
+        </p>
+        <div class="field">
+          <label>Название бизнеса</label
+          ><input id="businessName" placeholder="Например, Студия услуг" />
+        </div>
+        <div class="field">
+          <label>Отрасль</label
+          ><select id="businessType">
+            <option>Услуги</option>
+            <option>Торговля</option>
+            <option>Производство</option>
+            <option>E-commerce</option>
+            <option>IT / Digital</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button class="btn" data-close="businessModal">Отмена</button
+          ><button class="btn primary" id="confirmBusiness">Создать</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bg" id="reportModal">
+      <div
+        class="modal"
+        style="width: min(760px, 100%); max-height: 90vh; overflow: auto"
+      >
+        <h2 id="reportModalTitle">Новый месячный отчёт</h2>
+        <p>
+          Заполните только те показатели, которые доступны. Система рассчитает
+          производные метрики автоматически.
+        </p>
+        <div class="fields" id="reportFields"></div>
+        <div class="note">
+          Поля сгруппированы по финансовым, операционным, маркетинговым и
+          клиентским данным. Метрики без исходных данных в отчёт не попадут.
+        </div>
+        <div class="modal-actions">
+          <button class="btn" data-close="reportModal">Отмена</button
+          ><button class="btn primary" id="saveReport">Сохранить отчёт</button>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/ui/common.js"></script>
+    <script src="js/ui/dashboard.js"></script>
+    <script src="js/ui/reports.js"></script>
+    <script src="js/ui/profile.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

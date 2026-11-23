@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 500px at 85% -10%, var(--glow), transparent 65%),
+    var(--bg);
+  color: var(--text);
+  font:
+    16px/1.5 Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+.btn {
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  color: var(--text);
+  padding: 11px 16px;
+  border-radius: 11px;
+  font-weight: 650;
+  font-size: 14px;
+}
+.btn:hover {
+  border-color: var(--hover-border);
+}
+.btn.primary {
+  background: var(--green);
+  color: var(--btn-primary-text);
+  border-color: var(--green);
+}
+.btn.primary:hover {
+  background: var(--green2);
+  color: var(--btn-primary-text);
+}
+.btn.negative {
+  color: var(--red);
+}
+.btn.small {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.btn.add {
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  background: var(--green-add);
+  border-color: var(--green-add);
+  color: #fff;
+}
+.btn.add:hover {
+  filter: brightness(1.08);
+}
+.btn.block {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 14px 0 6px;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--input-bg) var(--sel-arrow) right 13px center no-repeat;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 10px 36px 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  min-width: 0;
+  width: 100%;
+}
+select:focus {
+  border-color: var(--focus);
+}
+input {
+  background: var(--input-bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 11px 12px;
+  border-radius: 10px;
+  outline: none;
+  min-width: 0;
+  width: 100%;
+  font-size: 15px;
+}
+input:focus {
+  border-color: var(--focus);
+}
+select option {
+  background: var(--surface);
+}

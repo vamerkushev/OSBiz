@@ -1,0 +1,163 @@
+@media (max-width: 1000px) {
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .fields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #reportMetrics.data-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #reportMetrics .data-row {
+    border-right: 1px solid var(--row-line);
+    border-left: none;
+    padding: 9px 14px;
+  }
+  #reportMetrics .data-row:nth-child(2n + 1) {
+    padding-left: 0;
+  }
+  #reportMetrics .data-row:nth-child(2n) {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .app {
+    padding: 10px 12px 90px;
+  }
+  .top {
+    height: 56px;
+    margin-bottom: 18px;
+  }
+  .brand img {
+    width: 90px;
+    height: 32px;
+  }
+  .market-status {
+    display: none;
+  }
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+  #sidebarToggle {
+    display: none;
+  }
+  .shell {
+    display: block;
+  }
+  .sidebar {
+    display: none;
+  }
+  .heading {
+    display: block;
+    margin-bottom: 17px;
+  }
+  .heading .actions {
+    margin-top: 13px;
+  }
+  .business-switch {
+    margin-top: 10px;
+  }
+  .business-switch select {
+    flex: 1;
+    width: 100%;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  .metrics {
+    gap: 8px;
+  }
+  .metric {
+    padding: 13px;
+    border-radius: 14px;
+  }
+  .metric-value {
+    font-size: 22px;
+  }
+  .panel {
+    padding: 8px;
+    border-radius: 15px;
+  }
+  .chart {
+    height: 205px;
+  }
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .data-list {
+    grid-template-columns: 1fr;
+  }
+  #reportMetrics.data-list {
+    grid-template-columns: 1fr;
+  }
+  #reportMetrics .data-row {
+    border-left: none;
+    padding-left: 0;
+  }
+  .fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+  .mobilebar {
+    display: flex;
+    position: fixed;
+    bottom: 9px;
+    left: 9px;
+    right: 9px;
+    z-index: 4;
+    background: var(--modal-bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 7px;
+    justify-content: space-around;
+    backdrop-filter: blur(20px);
+  }
+  .mobilebar button {
+    background: none;
+    border: 0;
+    color: var(--muted);
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    padding: 4px 10px;
+  }
+  .mobilebar button.active {
+    color: var(--green);
+  }
+  .mobilebar span {
+    font-size: 19px;
+  }
+  .table {
+    font-size: 12px;
+  }
+  .table th,
+  .table td {
+    padding: 9px 5px;
+  }
+  .data-row {
+    font-size: 13px;
+  }
+  .data-row b {
+    font-size: 13.5px;
+  }
+  #reportMetrics.data-list {
+    grid-template-columns: 1fr;
+  }
+  #reportMetrics .data-row {
+    border-left: none;
+    border-right: none;
+    padding: 9px 0;
+  }
+}

@@ -1,0 +1,68 @@
+:root,
+[data-theme="dark"] {
+  --bg: #0b0d0c;
+  --surface: #141816;
+  --surface2: #1a201d;
+  --line: #29312c;
+  --text: #f4f6f4;
+  --muted: #89938d;
+  --green: #84cc4a;
+  --green2: #9be35d;
+  --green-add: #76bd40;
+  --red: #ff666d;
+  --yellow: #e8c66a;
+  --radius: 18px;
+  --btn-primary-text: #ffffff;
+  --input-bg: #101411;
+  --panel-grad1: #1a211d;
+  --panel-grad2: #121613;
+  --chart-line: #29312c;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg: #171e19;
+  --modal-line: #3a463d;
+  --focus: #8cc65a;
+  --hover-border: #647b68;
+  --nav-hover: rgba(155, 227, 93, 0.08);
+  --ico: #78847b;
+  --navtitle: #68736c;
+  --avatar-bg: #202a22;
+  --avatar-line: #39443c;
+  --white-dot: rgba(255, 255, 255, 0.02);
+  --row-line: #29312c;
+  --muted2: #8d9290;
+  --glow: rgba(35, 60, 43, 0.33);
+  --sel-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2389938d' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+[data-theme="light"] {
+  --bg: #f3f5f1;
+  --surface: #ffffff;
+  --surface2: #edf0ea;
+  --line: #d6dcd2;
+  --text: #1c241f;
+  --muted: #5d6a60;
+  --green: #3f8a12;
+  --green2: #2f6b0e;
+  --green-add: #4c9a15;
+  --red: #d33b42;
+  --yellow: #b98a1e;
+  --btn-primary-text: #ffffff;
+  --input-bg: #ffffff;
+  --panel-grad1: #ffffff;
+  --panel-grad2: #f7f9f5;
+  --chart-line: #d6dcd2;
+  --overlay: rgba(22, 28, 24, 0.45);
+  --modal-bg: #ffffff;
+  --modal-line: #c8d0c6;
+  --focus: #3f8a12;
+  --hover-border: #8ba18b;
+  --nav-hover: rgba(63, 138, 18, 0.08);
+  --ico: #79837b;
+  --navtitle: #8a948b;
+  --avatar-bg: #e4e9e2;
+  --avatar-line: #c8d0c6;
+  --white-dot: rgba(0, 0, 0, 0.02);
+  --row-line: #e2e7df;
+  --muted2: #98a099;
+  --glow: rgba(63, 138, 18, 0.05);
+  --sel-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235d6a60' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
